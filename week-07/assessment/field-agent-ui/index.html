@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./favicon.ico" rel="icon" />
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <title>Field Agent</title>
+</head>
+
+<body>
+    <main class="container">
+        <!-- navigation is always visible other than the "Add Agent" button -->
+        <div class="d-flex align-items-center">
+            <ul class="nav my-4">
+                <li class="nav-item">
+                    <a id="linkAgents" href="#" class="nav-link">Agents</a>
+                </li>
+                <li class="nav-item">
+                    <a id="linkAgencies" href="#" class="nav-link">Agencies</a>
+                </li>
+            </ul>
+            <div class="d-flex flex-grow-1 justify-content-end landing list">
+                <button id="btnAdd" class="btn btn-primary">Add Agent</button>
+            </div>
+        </div>
+        <!-- we start on the "landing" view -->
+        <div class="landing">
+            <div class="container-fluid">
+                <h1 class="display-5">Field Agent Web</h1>
+                <div class="my-4">
+                    <img class="img-fluid border border-secondary rounded-5"
+                        src="https://picsum.photos/id/209/1200/450?blur=2" alt="agents in a tunnel">
+                </div>
+            </div>
+        </div>
+        <!-- the "list" view shows all agents -->
+        <div class="list d-none">
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>DOB</th>
+                        <th>Height</th>
+                        <th>&nbsp;</th>
+                    </tr>
+                </thead>
+                <tbody> </tbody>
+            </table>
+            <div class="alert alert-warning py-4 d-none">
+                No agents found.<br>
+                Do you want to add an agent?
+            </div>
+        </div>
+        <!-- the "form" view displays an HTML form to either add or update an agent -->
+        <div class="form d-none">
+            <h1 class="display-6">Add an Agent</h1>
+            <div id="validationSummary" class="alert alert-danger d-none">
+
+            </div>
+            <form>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label" for="firstName">First Name</label>
+                        <input id="firstName" name="firstName" type="text" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="middleName">Middle Name</label>
+                        <input id="middleName" name="middleName" type="text" class="form-control">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label class="form-label" for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" type="text" class="form-control" required>
+                </div>
+                <div class="row mb-3">
+                    <div class="col">
+                        <label class="form-label" for="dob">DOB</label>
+                        <input id="dob" name="dob" type="date" class="form-control" required>
+                    </div>
+                    <div class="col">
+                        <label class="form-label" for="heightInInches">Height (inches)</label>
+                        <input id="heightInInches" name="heightInInches" type="number" class="form-control" required
+                            min="36" max="96">
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary me-2">Save</button>
+                    <button type="button" class="btn btn-warning">Cancel</button>
+                </div>
+            </form>
+        </div>
+    </main>
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
